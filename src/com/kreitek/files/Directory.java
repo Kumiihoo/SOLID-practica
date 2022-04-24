@@ -3,6 +3,8 @@ package com.kreitek.files;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.kreitek.service.FileManager.calculateSize;
+
 public class Directory extends FileSystemItemBase implements FileSystemItem {
 
     private static final String NO_ES_VALIDO_PARA_DIRECTORIOS = "No es válido para directorios";
@@ -39,7 +41,7 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
 
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
+        return calculateSize(files);
     }
 
     @Override
